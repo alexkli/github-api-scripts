@@ -107,3 +107,20 @@ Make sure to use the URL escaped name that you find in the `url` in the label JS
 ```
 github-delete-labels.sh <user:token> <api-url> <org/repo> <label>...
 ```
+
+Repos
+------
+
+### List all repos of an organization
+
+To get the full repo json for each repo in an organization:
+
+```
+github-get-org-repos.sh <user>:<token> <github-api-url> <org> [type]
+```
+
+To get just the repo names, use with `jq`:
+
+```
+github-get-org-repos.sh <user>:<token> <github-api-url> <org> [type] | jq -r .[].name
+```
