@@ -12,7 +12,7 @@ repo=$4
 
 accept="Accept: application/vnd.github.symmetra-preview+json"
 
-echo "Uploading labels:"
+echo "Uploading labels in ${repo}:"
 readarray -t labels < <(jq -c '.[] | {name: .name, description: .description, color: .color}' $file)
 for label in "${labels[@]}"; do
     name=$(jq -r '.name' <<< $label)

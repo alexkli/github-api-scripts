@@ -15,7 +15,7 @@ shift
 
 accept="Accept: application/vnd.github.symmetra-preview+json"
 
-echo "Deleting labels:"
+echo "Deleting labels in ${repo}:"
 
 for label in "$@"; do
     printf "%s" "+ $label"
