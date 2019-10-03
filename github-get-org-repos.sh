@@ -16,4 +16,4 @@ base=$2
 org=$3
 type=${4:-all}
 
-curl -s -f -u "$user" $base/orgs/$org/repos?type=$type
+curl -v -s -f -u "$user" "$base/orgs/$org/repos?type=$type&per_page=100"
